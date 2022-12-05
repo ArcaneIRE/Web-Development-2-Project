@@ -19,6 +19,7 @@ body {
 
 main {
     flex-grow: 1;
+    background-color: rgb(211, 211, 211);
 }
 
 a {
