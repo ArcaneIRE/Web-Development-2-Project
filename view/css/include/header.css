@@ -1,9 +1,38 @@
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    height: 4rem;
     width: 100%;
+    background-color: #3498DB;
 }
 
 h1 {
     margin: 0;
+    font-size: 2.2rem;
+    color: inherit;
+}
+
+h1 > a {
+    color: #EEE;
+    text-decoration: none;
+}
+
+.header-nav  {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    font-size: 1.3rem;
+}
+
+.header-nav > a {
+    color: #EEE;
+    text-decoration: none;
+}
+
+.header-nav > a:hover {
+    color: white;
+    transform: scale(1.05);
+    text-decoration: none;
 }
