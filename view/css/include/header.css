@@ -1,9 +1,11 @@
 header {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    height: 4rem;
+    padding: .2rem .5rem;
+    min-height: 4rem;
     width: 100%;
     background-color: #3498DB;
 }
@@ -22,11 +24,13 @@ h1 > a {
 .header-nav  {
     display: flex;
     justify-content: space-evenly;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.3rem;
 }
 
 .header-nav > a {
+    text-align: center;
     color: #EEE;
     text-decoration: none;
 }
