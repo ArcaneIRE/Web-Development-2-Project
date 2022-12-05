@@ -23,5 +23,6 @@ main {
 }
 
 a {
-    color: #0077aa; 
+    color: #0077aa;
+    text-decoration: none;
 }
