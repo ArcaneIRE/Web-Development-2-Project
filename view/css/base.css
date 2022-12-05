@@ -26,3 +26,9 @@ a {
     color: #0077aa;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 500px)  {
+    body {
+        width: 100%;
+    }
+}
