@@ -2,7 +2,7 @@
 
 :root {
     font-size: 18px;
-    background-color: #EEE;
+    background-color: rgb(211, 211, 211);
     color: #454545 ;
     font-family: sans-serif;
 }
@@ -19,7 +19,7 @@ body {
 
 main {
     flex-grow: 1;
-    background-color: rgb(211, 211, 211);
+    background-color: #EEE;
 }
 
 a {
