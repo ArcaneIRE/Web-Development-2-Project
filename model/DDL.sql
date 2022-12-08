@@ -30,6 +30,7 @@ CREATE TABLE
         edition integer NOT NULL,
         year SMALLINT NOT NULL,
         category_id INTEGER NOT NULL,
+        reserved BOOLEAN NOT NULL,
         CONSTRAINT book_category_fk FOREIGN KEY (category_id) REFERENCES categories (id)
     );
 
