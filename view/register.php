@@ -15,7 +15,7 @@
   ?>
 
   <main>
-    <h1 id="form-title" >Create New Account</h1>
+    <h2 id="form-title" >Create New Account</h1>
     <form method="post" action="" id="registration-form">
       <div class="row">
         <label for="username">Username:</label>
