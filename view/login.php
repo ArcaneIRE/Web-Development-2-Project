@@ -39,7 +39,10 @@
 
         $logInQuery = "SELECT username, password FROM users WHERE username = '$username'";
         $result = $conn->query($logInQuery);
-        if ($result->num_rows === 0) {
+        if (!$result) {
+          echo '<p class="error">Error connecting to database' . $conn->error . '.</p>';
+        }
+        elseif ($result->num_rows === 0) {
           echo '<p class="error">Incorrect username or password.</p>';
           return;
         }

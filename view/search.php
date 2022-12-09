@@ -69,11 +69,17 @@
           $authorSearch = "SELECT * FROM books WHERE author LIKE '%$search_term%'";
           $searchQuery = $titleSearch . ' UNION ' . $authorSearch;
           $result = $conn->query($searchQuery);
+          if (!$result) {
+            echo '<p class="error">Error connecting to database' . $conn->error . '.</p>';
+          }
         }
         if (isset($_POST['category-id'])) {
           $category_id = $_POST['category-id'];
           $categoryQuery = "SELECT * FROM books WHERE category_id = '$category_id'";
           $result = $conn->query($categoryQuery);
+          if (!$result) {
+            echo '<p class="error">Error connecting to database.</p>';
+          }
         }
 
         if (!isset($result->num_rows)) {

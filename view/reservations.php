@@ -49,8 +49,10 @@
                 $username = $_SESSION['username'];
                 $reservationsQuery = "SELECT books.isbn, books.title, reservations.reservation_date FROM users INNER JOIN reservations ON reservations.username = users.username INNER JOIN books ON books.isbn = reservations.isbn WHERE users.username = '$username'";
                 $result = $conn->query($reservationsQuery);
-
-                if ($result->num_rows === 0) {
+                if (!$result) {
+                    echo '<p class="error">Error connecting to database' . $conn->error . '.</p>';
+                }
+                elseif ($result->num_rows === 0) {
                     echo '</table>';
                     echo '<p>No Reservations Currently Made</p>';
                 } else {
