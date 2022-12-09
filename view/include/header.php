@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/web-dev-project/view/css/include/header.css" type="text/css">
 <header>
     <h1>
-        <a href="index.php">Library</a>
+        <a href="/web-dev-project/index.php">Library</a>
     </h1>
 
     <nav class="header-nav">
-        <a href="search.php">Search</a>
-        <a href="account.php">My Account</a>
+        <a href="/web-dev-project/view/search.php">Search</a>
+        <a href="/web-dev-project/view/account.php">My Account</a>
     </nav>
 </header>
