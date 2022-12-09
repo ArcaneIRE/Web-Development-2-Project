@@ -7,11 +7,11 @@ CREATE TABLE
     users (
         username VARCHAR(30) NOT NULL PRIMARY KEY,
         password VARCHAR(6) NOT NULL,
-        firstname VARCHAR(30) NOT NULL,
-        surname VARCHAR(30),
-        AddressLine1 VARCHAR(50) NOT NULL,
-        AddressLine2 VARCHAR(50),
-        city VARCHAR(30),
+        firstname VARCHAR(100) NOT NULL,
+        surname VARCHAR(100),
+        AddressLine1 VARCHAR(100),
+        AddressLine2 VARCHAR(100),
+        city VARCHAR(100),
         telephone VARCHAR(15),
         mobile VARCHAR(10)
     );
