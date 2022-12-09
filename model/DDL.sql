@@ -9,11 +9,7 @@ CREATE TABLE
         password VARCHAR(6) NOT NULL,
         firstname VARCHAR(100) NOT NULL,
         surname VARCHAR(100),
-<<<<<<< HEAD
         AddressLine1 VARCHAR(100),
-=======
-        AddressLine1 VARCHAR(100) NOT NULL,
->>>>>>> 26416a98c674b767141c5460778b26db146cb852
         AddressLine2 VARCHAR(100),
         city VARCHAR(100),
         telephone VARCHAR(15),
