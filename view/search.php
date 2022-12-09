@@ -1,8 +1,8 @@
 <?php 
     session_start();
     if (!isset($_SESSION['username'])) {
-        header('Location: index.php');
-        return;
+        header('Location: /web-dev-project/index.php');
+        exit();
     }
 
     $root = $_SERVER['DOCUMENT_ROOT'] . '/web-dev-project';
@@ -50,6 +50,18 @@
       </div>
       <?php
         require_once $root . '/model/database_connect.php';
+
+        // If reserve button was clicked
+        if (isset($_POST['reserve'])) {
+          $isbn = $_POST['reserve'];
+          $username = $_SESSION['username'];
+          $insertReservationQuery = "INSERT INTO reservations VALUES ('$isbn', '$username', CURRENT_DATE())";
+          $conn->query($insertReservationQuery);
+          $updateBookQuery = "UPDATE books SET reserved = true WHERE isbn = '$isbn'";
+          $conn->query($updateBookQuery);
+        }
+
+        // If a search was initiated
         $result = 0;
         if (isset($_POST['search-term'])) {
           $search_term = htmlentities($_POST['search-term']);
@@ -81,7 +93,7 @@
           echo '<th>Year</th>';
           echo '<th>Category</th>';
           echo '<th>Reserved</th>';
-          echo '<th>Make Reservation</th>';
+          echo '<th>Reserve</th>';
           echo '</tr>';
 
           $offset = 0;
@@ -103,12 +115,26 @@
             echo '<td>' . $row[3] . '</td>';
             echo '<td>' . $row[4] . '</td>';
             echo '<td>' . $row[5] . '</td>';
+            $reserve_disabled = '';
             if ($row[6]) {
               echo '<td>Yes</td>';
+              $reserve_disabled = ' disabled';
             } else {
               echo '<td>No</td>';
             }
-            echo '<td>Reserve</td>';
+            // Reserve Button
+            echo '<td>';
+            echo '<form method="post">';
+            if (isset($_POST['search-term'])) {
+              echo '<input type="hidden" name="search-term" value="' . $_POST['search-term'] . '">';
+            } elseif (isset($_POST['category-id'])) {
+              echo '<input type="hidden" name="category-id" value="' . $_POST['category-id'] . '"' . $reserve_disabled . '>';
+            }
+            echo '<input type="hidden" name="offset" value="'. $offset . '">';
+            echo '<input type="hidden" name="reserve" value="' . $row['0'] . '">';
+            echo '<button type="submit"' . $reserve_disabled . '>Reserve</button>';
+            echo '</form>';
+            echo '</td>';
             echo '</tr>';
           }
           echo '</table>';

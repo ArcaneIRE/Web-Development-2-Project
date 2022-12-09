@@ -1,8 +1,8 @@
 <?php 
     session_start();
     if (!isset($_SESSION['username'])) {
-        header('Location: index.php');
-        return;
+        header('Location: /web-dev-project/index.php');
+        exit();
     }
 
     $root = $_SERVER['DOCUMENT_ROOT'] . '/web-dev-project';
