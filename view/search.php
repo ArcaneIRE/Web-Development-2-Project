@@ -52,7 +52,7 @@
         require_once $root . '/model/database_connect.php';
         $result = 0;
         if (isset($_POST['search-term'])) {
-          $search_term = $_POST['search-term'];
+          $search_term = htmlentities($_POST['search-term']);
           $titleSearch = "SELECT * FROM books WHERE title LIKE '%$search_term%'";
           $authorSearch = "SELECT * FROM books WHERE author LIKE '%$search_term%'";
           $searchQuery = $titleSearch . ' UNION ' . $authorSearch;

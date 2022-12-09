@@ -63,33 +63,33 @@
       if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirmPassword']) && isset($_POST['firstName'])) {
         require_once $root . '/model/database_connect.php';
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $confirmPassword = $_POST['confirmPassword'];
-        $firstName = $_POST['firstName'];
+        $username = htmlentities($_POST['username']);
+        $password = htmlentities($_POST['password']);
+        $confirmPassword = htmlentities($_POST['confirmPassword']);
+        $firstName = htmlentities($_POST['firstName']);
         $surname = '';
         if (isset($_POST['Surname'])) {
-          $surname = $_POST['Surname'];
+          $surname = htmlentities($_POST['Surname']);
         }
         $addressLineOne = '';
         if (isset($_POST['addressLineOne'])) {
-          $addressLineOne = $_POST['addressLineOne'];
+          $addressLineOne = htmlentities($_POST['addressLineOne']);
         }
         $addressLineTwo = '';
         if (isset($_POST['addressLineTwo'])) {
-          $addressLineTwo = $_POST['addressLineTwo'];
+          $addressLineTwo = htmlentities($_POST['addressLineTwo']);
         }
         $city = '';
         if (isset($_POST['city'])) {
-          $city = $_POST['city'];
+          $city = htmlentities($_POST['city']);
         }
         $telephone = '';
         if (isset($_POST['telephone'])) {
-          $telephone = $_POST['telephone'];
+          $telephone = htmlentities($_POST['telephone']);
         }
         $mobile = '';
         if (isset($_POST['mobile'])) {
-          $mobile = $_POST['mobile'];
+          $mobile = htmlentities($_POST['mobile']);
         }
 
         // Input Validation
