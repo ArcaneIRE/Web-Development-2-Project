@@ -7,5 +7,12 @@
     <nav class="header-nav">
         <a href="/web-dev-project/view/search.php">Search</a>
         <a href="/web-dev-project/view/account.php">My Account</a>
+        <?php
+            if (isset($_SESSION['username'])) {
+                echo '<a href="/web-dev-project/view/logout.php">Log Out</a>';
+            } else {
+                echo '<a href="/web-dev-project/view/login.php">Log In</a>';
+            }
+        ?>
     </nav>
 </header>
