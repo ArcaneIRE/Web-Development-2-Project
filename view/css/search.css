@@ -17,7 +17,8 @@ h2 {
   gap: 1rem;
 }
 
-.search-form, .category-form {
+.search-form,
+.category-form {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -25,7 +26,8 @@ h2 {
   max-width: 20rem;
 }
 
-form select, form input {
+form select,
+form input {
   box-sizing: border-box;
   width: 13rem;
 }
@@ -34,13 +36,14 @@ form select, form input {
   box-sizing: border-box;
   width: 100%;
   margin: 1rem 0;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   text-align: center;
 }
 
 th {
   border-bottom: 1px solid black;
 }
-td, th {
-  padding: .5rem 0rem;
+td,
+th {
+  padding: 0.5rem 0rem;
 }

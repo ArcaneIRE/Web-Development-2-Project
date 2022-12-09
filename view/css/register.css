@@ -34,8 +34,8 @@ main {
 }
 
 .submit {
-  margin: .5rem 0;
-  padding: .3rem .5rem;
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.5rem;
 }
 
 .error {
