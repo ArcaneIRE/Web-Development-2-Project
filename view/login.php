@@ -1,5 +1,7 @@
 <?php 
-    $root = $_SERVER['DOCUMENT_ROOT'] . '/web-dev-project';
+  session_start();
+
+  $root = $_SERVER['DOCUMENT_ROOT'] . '/web-dev-project';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +29,33 @@
       </div>
       <button>Log In</button>
     </form>
+    <?php
+
+      if (isset($_POST['username']) && isset($_POST['password'])) {
+        require_once $root . '/model/database_connect.php';
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $logInQuery = "SELECT username, password FROM users WHERE username = '$username'";
+        $result = $conn->query($logInQuery);
+        if ($result->num_rows === 0) {
+          echo '<p class="error">Incorrect username or password.</p>';
+          return;
+        }
+        else {
+          $truePassword = mysqli_fetch_array($result)[1];
+          if ($password !== $truePassword) {
+            echo '<p class="error">Incorrect username or password.</p>';
+            return;
+          } else {
+            $_SESSION["username"] = $username;
+            echo '<p class="success">Logged in successfully!</p>'; 
+            echo $_SESSION["username"];
+          }
+        }
+      }
+    ?>
   </main>
 
   <?php
