@@ -65,7 +65,7 @@
         }
 
         if (!isset($result->num_rows)) {
-          echo '<p>No Results</p>';
+          return;
         }
         elseif ($result->num_rows === 0) {
           echo '<p>No Results</p>';
