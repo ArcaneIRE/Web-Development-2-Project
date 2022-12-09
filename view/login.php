@@ -50,8 +50,7 @@
             return;
           } else {
             $_SESSION["username"] = $username;
-            echo '<p class="success">Logged in successfully!</p>'; 
-            echo $_SESSION["username"];
+            echo '<p class="success">Logged in successfully!</p>';
           }
         }
       }
