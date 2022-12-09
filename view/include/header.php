@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./view/css/include/header.css" type="text/css">
+<link rel="stylesheet" href="/web-dev-project/view/css/include/header.css" type="text/css">
 <header>
     <h1>
         <a href="index.php">Library</a>
