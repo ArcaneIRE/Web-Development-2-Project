@@ -70,8 +70,8 @@ $root = $_SERVER['DOCUMENT_ROOT'] . '/web-dev-project';
         $confirmPassword = htmlentities($_POST['confirmPassword']);
         $firstName = htmlentities($_POST['firstName']);
         $surname = '';
-        if (isset($_POST['Surname'])) {
-          $surname = htmlentities($_POST['Surname']);
+        if (isset($_POST['surname'])) {
+          $surname = htmlentities($_POST['surname']);
         }
         $addressLineOne = '';
         if (isset($_POST['addressLineOne'])) {
