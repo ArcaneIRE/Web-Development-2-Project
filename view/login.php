@@ -51,6 +51,7 @@
           } else {
             $_SESSION["username"] = $username;
             echo '<p class="success">Logged in successfully!</p>';
+            echo '<p class="main-menu-link">Click <a href="/web-dev-project/index.php">here</a> to go to the main menu</p>';
           }
         }
       }

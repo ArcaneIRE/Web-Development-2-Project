@@ -40,3 +40,8 @@ button {
 .success {
   color: green;
 }
+
+.main-menu-link {
+  display: inline-block;
+  margin: 0;
+}
